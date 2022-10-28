@@ -14,7 +14,12 @@ return require('packer').startup(function(use)
   }
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'mfussenegger/nvim-dap'
-  use 'alfredodeza/pytest.vim'
+  use {
+  "klen/nvim-test",
+  config = function()
+    require('nvim-test').setup()
+  end
+}
   use 'tpope/vim-commentary'
   use 'williamboman/mason.nvim'    
   use 'williamboman/mason-lspconfig.nvim'

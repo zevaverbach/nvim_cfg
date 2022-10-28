@@ -19,7 +19,7 @@ nnoremap("<leader>i", ":e ~/.config/nvim/init.lua<cr>")
 nnoremap("<leader>p", ":e ~/.config/nvim/lua/plug.lua<cr>")
 
 -- FloaTerm configuration
-nmap("gt", ":FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 fish <CR> ")
+nmap("<leader>t", ":FloatermNew --name=myfloat --height=0.85 --width=0.75 --autoclose=2 bash <CR>")
 tnoremap("<c-c>", "<c-\\><c-n>:q<CR>")
 
 -- save all and quit
@@ -32,13 +32,13 @@ nnoremap("<c-l>", ":bn<cr>")
 -- clear highlights
 nnoremap("<c-e>", ":noh<cr>")
 
+-- run rust tests
+nmap("<leader>r", ":FloatermNew --name=myfloat --height=0.85 --width=0.75 --autoclose=2 bash <cr>cargo test<cr>")
+
 -- Telescope
 nnoremap("<leader>f", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 nnoremap("<leader>g", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
 nnoremap("<leader>b", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-
--- nnoremap("<leader>t", "<cmd>Pytest file<cr>")
--- nnoremap("<leader>tt", "<cmd>Pytest function<cr>")
 
 -- source current file
 nnoremap("<leader>s", "<cmd>source<cr>")
