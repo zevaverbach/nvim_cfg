@@ -26,6 +26,10 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig' 
   use 'simrat39/rust-tools.nvim'
 
+  -- TODO: set these up
+  use 'zivyangll/git-blame.vim' -- show the commit where a line of code came from
+  use 'SmiteshP/nvim-navic' -- show filepath at top 
+
   -- copy pasted from https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
   use 'hrsh7th/nvim-cmp' 
 
