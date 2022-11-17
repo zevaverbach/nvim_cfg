@@ -11,6 +11,8 @@ vim.opt.expandtab = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.wrap = true
+vim.opt.mouse = ""
+
 
 vim.opt.smartindent = true
 
@@ -43,9 +45,52 @@ let g:vimspector_bottombar_height = 15
 let g:vimspector_terminal_maxwidth = 70
 ]])
 
-require('nvim-treesitter.configs').setup {
-  indent = {
+require("nvim-treesitter.configs").setup {
+  ensure_installed = {
+    "bash",
+    "c",
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "python",
+    "regex",
+    "rust",
+    "scss",
+    "sql",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "yaml",
+  },
+  filetypes = {
+    "html",
+    "javascript",
+    "svelte",
+    "typescript",
+    "xml",
+  },
+  yati = {
     enable = true,
-    disable = { 'yaml' }
+    -- Disable by languages, see `Supported languages`
+    disable = { "yaml" },
+
+    -- Whether to enable lazy mode (recommend to enable this if bad indent happens frequently)
+    default_lazy = true,
+
+    -- Determine the fallback method used when we cannot calculate indent by tree-sitter
+    --   "auto": fallback to vim auto indent
+    --   "asis": use current indent as-is
+    --   "cindent": see `:h cindent()`
+    -- Or a custom function return the final indent result.
+    default_fallback = "auto"
+  },
+  indent = {
+    enable = false -- disable builtin indent module
   }
 }
+

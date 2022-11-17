@@ -10,13 +10,20 @@ vim.g.mapleader = ' '
 nnoremap("<leader>pv", "<cmd>Ex<CR>")
 nnoremap("<leader>pk", "<cmd>PackerSync<CR>")
 nnoremap("<c-s>", "<cmd>w<CR>")
-nnoremap("<leader>w", "<cmd>bw<cr>")
+nnoremap("<leader>w", ":Bdelete<cr>")
+nnoremap("<leader>h", "<c-w>h")
+nnoremap("<leader>l", "<c-w>l")
+nnoremap("<leader>j", "<c-w>j")
+nnoremap("<leader>k", "<c-w>k")
 -- xnoremap("<leader>p", "\"_dP")
+nnoremap("<leader>v", ":vspl<cr>")
+nnoremap("<leader>c", ":spl<cr>")
 
-nnoremap("<leader>k", ":e ~/.config/nvim/lua/keys.lua<cr>")
+nnoremap("<leader>m", ":e ~/.config/nvim/lua/keys.lua<cr>")
 nnoremap("<leader>o", ":e ~/.config/nvim/lua/opts.lua<cr>")
 nnoremap("<leader>i", ":e ~/.config/nvim/init.lua<cr>")
 nnoremap("<leader>p", ":e ~/.config/nvim/lua/plug.lua<cr>")
+nnoremap("gf", ":e <cfile><cr>")
 
 -- FloaTerm configuration
 nmap("<leader>t", ":FloatermNew --name=myfloat --height=0.85 --width=0.75 --autoclose=2 bash <CR>")
@@ -33,7 +40,10 @@ nnoremap("<c-l>", ":bn<cr>")
 nnoremap("<c-e>", ":noh<cr>")
 
 -- run rust tests
-nmap("<leader>r", ":FloatermNew --name=myfloat --height=0.85 --width=0.75 --autoclose=2 bash <cr>cargo test<cr>")
+-- nmap("<leader>r", ":FloatermNew --name=myfloat --height=0.85 --width=0.75 --autoclose=2 bash <cr>cargo test<cr>")
+
+-- run python tests
+nmap("<leader>r", ":FloatermNew --name=myfloat --height=0.85 --width=0.75 --autoclose=2 bash <cr>pytest<cr>")
 
 -- Telescope
 nnoremap("<leader>f", "<cmd>lua require('telescope.builtin').find_files()<cr>")
@@ -43,7 +53,7 @@ nnoremap("<leader>b", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 -- source current file
 nnoremap("<leader>s", "<cmd>source<cr>")
 
-nmap("<leader>l", ":call CocAction('diagnosticNext')<cr>")
+nmap("<leader>n", ":call CocAction('diagnosticNext')<cr>")
 nmap("gd", ":call CocAction('jumpDefinition')<cr>")
 
 -- In insert or command mode, move normally by using Ctrl

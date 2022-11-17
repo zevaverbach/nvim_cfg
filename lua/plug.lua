@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim' 
   use 'kyazdani42/nvim-web-devicons'
+  use 'leafOfTree/vim-svelte-plugin'
   use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
       requires = { {'nvim-lua/plenary.nvim'} }
@@ -31,6 +32,7 @@ return require('packer').startup(function(use)
   use 'SmiteshP/nvim-navic' -- show filepath at top 
 
   -- copy pasted from https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
+  -- code completion
   use 'hrsh7th/nvim-cmp' 
 
   -- LSP completion source:
@@ -56,4 +58,6 @@ return require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
   use 'kylechui/nvim-surround'
+  use { "yioneko/nvim-yati", tag = "*", requires = "nvim-treesitter/nvim-treesitter" }
+  use 'moll/vim-bbye'
 end)
